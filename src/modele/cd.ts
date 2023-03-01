@@ -10,8 +10,7 @@ export class CD{
   quantity!: number;
   onsale?: boolean;
 
-  constructor(id: number, title: string, artist: string, genre: string, price: number, releaseDate: Date, cover: string, quantity: number, onsale?: boolean) {
-    this.id = id;
+  constructor(title: string, artist: string, genre: string, price: number, releaseDate: Date, cover: string, quantity: number, onsale?: boolean) {
     this.title = title;
     this.artist = artist;
     this.genre = genre;
@@ -19,7 +18,11 @@ export class CD{
     this.releaseDate = releaseDate;
     this.cover = cover;
     this.quantity = quantity;
-    this.onsale = onsale;
+    if (onsale != undefined) {
+      this.onsale = onsale;
+    }else{
+      this.onsale = false;
+    }
   }
 
   toString(): string {
