@@ -1,1 +1,16 @@
-<p>cd works!</p>
+
+<div class="unCD-card" >
+  <h3>{{unCD.title | uppercase}}</h3>
+  <div class="artiste">
+    <p>Sortie le : {{unCD.releaseDate | date:'dd/MM/yyyy'}}</p>
+    <p>Auteur : {{unCD.artist}}</p>
+    <p>Prix : {{unCD.price | currency:'EUR':true}}</p>
+    <p>En stock :
+      <span [ngStyle]="{color: 'rgb('+ (255 - unCD.quantity) + ',' + unCD.quantity + ',0)'}">{{unCD.quantity}}</span>
+      <!-- onAddCD() quand on appuie sur le bouton (meme en laissant appuyé) -->
+      <button (click)="onAddCD()">+</button>
+    </p>
+  </div>
+  <img [src]="unCD.cover" [alt]="unCD.title" />
+
+</div>

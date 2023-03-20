@@ -20,8 +20,7 @@ export class ListCDsComponent implements OnInit {
         price: 15.99,
         releaseDate: new Date(1973, 2, 1),
         cover: "https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png",
-        quantity: 10,
-        onsale: true
+        quantity: 10
       },
       {
         id: 2,
@@ -31,8 +30,7 @@ export class ListCDsComponent implements OnInit {
         price: 15.99,
         releaseDate: new Date(1979, 11, 1),
         cover: "https://upload.wikimedia.org/wikipedia/en/0/0b/Pink_Floyd_-_The_Wall.jpg",
-        quantity: 10,
-        onsale: true
+        quantity: 40
       },
       {
         id: 3,
@@ -42,8 +40,7 @@ export class ListCDsComponent implements OnInit {
         price: 15.99,
         releaseDate: new Date(1967, 6, 1),
         cover: "https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png",
-        quantity: 10,
-        onsale: true
+        quantity: 90
       },
       {
         id: 4,
@@ -53,8 +50,7 @@ export class ListCDsComponent implements OnInit {
         price: 15.99,
         releaseDate: new Date(1977, 1, 1),
         cover: "https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png",
-        quantity: 10,
-        onsale: true
+        quantity: 20
       },
       {
         id: 5,
@@ -64,8 +60,7 @@ export class ListCDsComponent implements OnInit {
         price: 15.99,
         releaseDate: new Date(1963, 5, 1),
         cover: "https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png",
-        quantity: 10,
-        onsale: true
+        quantity: 0
       },
       {
         id: 6,
@@ -75,8 +70,7 @@ export class ListCDsComponent implements OnInit {
         price: 15.99,
         releaseDate: new Date(1965, 6, 1),
         cover: "https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png",
-        quantity: 10,
-        onsale: true
+        quantity: 200
       },
       {
         id: 7,
@@ -86,8 +80,7 @@ export class ListCDsComponent implements OnInit {
         price: 15.99,
         releaseDate: new Date(1966, 6, 1),
         cover: "https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png",
-        quantity: 10,
-        onsale: true
+        quantity: 255
       },
       {
         id: 8,
@@ -97,8 +90,7 @@ export class ListCDsComponent implements OnInit {
         price: 209.99,
         releaseDate: new Date(1967, 6, 1),
         cover: "https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png",
-        quantity: 10,
-        onsale: true
+        quantity: 300
       }
     ];
   }
