@@ -1,10 +1,20 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Route } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import {ListCDsComponent} from "./list-cds/list-cds.component";
+import {HomeComponent} from "./home/home.component";
 
-const routes: Routes = [];
+const routes: Route[] = [
+    { path: '', component: HomeComponent },
+    { path: 'listcds', component: ListCDsComponent }
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  declarations: [],
+  imports: [
+    CommonModule,
+    RouterModule.forRoot(routes)
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

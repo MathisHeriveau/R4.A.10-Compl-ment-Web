@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { CDComponent } from './cd/cd.component';
 import { ListCDsComponent } from './list-cds/list-cds.component';
 import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CDComponent,
     ListCDsComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
