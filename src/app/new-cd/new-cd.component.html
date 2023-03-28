@@ -4,37 +4,35 @@
     <section class="subForm saisieForm">
       <h1>Nouveau CD</h1>
       <form [formGroup]="formulaire">
-
         <div class="form-group">
           <label for="title">Titre</label>
-          <input type="text"  id="title" formControlName="title" required>
+          <input type="text"  id="title" formControlName="title">
         </div>
         <div class="form-group">
           <label for="cover">Pochette</label>
-          <input type="url"  id="cover" formControlName="cover" required>
+          <input type="url"  id="cover" formControlName="cover">
         </div>
         <div class="form-group">
           <label for="artist">Artiste</label>
-          <input type="text"  id="artist" formControlName="artist" required>
+          <input type="text"  id="artist" formControlName="artist">
         </div>
         <div class="form-group">
           <label for="genre">Genre</label>
-          <input type="text"  id="genre" formControlName="genre" required>
+          <input type="text"  id="genre" formControlName="genre">
         </div>
         <div class="form-group">
           <label for="price">Prix</label>
-          <input type="number"  id="price" formControlName="price" required>
+          <input type="number" min="1" id="price" formControlName="price">
         </div>
         <div class="form-group">
           <label for="releaseDate">Date de sortie</label>
-          <input type="date"  id="releaseDate" formControlName="releaseDate" required>
+          <input type="date"  id="releaseDate" formControlName="releaseDate">
         </div>
         <div class="form-group">
           <label for="quantity">Quantité</label>
-          <input type="number"  id="quantity" formControlName="quantity" required>
+          <input type="number" min="0" id="quantity" formControlName="quantity">
         </div>
         <button type="submit" (click)="addCD()" >Ajouter</button>
-
       </form>
     </section>
 
@@ -43,13 +41,12 @@
       <div class="unCD-card" >
         <div class="artiste" *ngIf="currenCD$ | async as unCD">
           <h3>Titre : {{unCD.title | uppercase}}</h3>
-          <p>Sortie le : {{unCD.releaseDate | date:'dd/MM/yyyy'}}</p>
+          <img [src]="unCD.cover" [alt]="unCD.title" />
           <p>Auteur : {{unCD.artist}}</p>
           <p>Prix : {{unCD.price | currency:'EUR':true}}</p>
-          <p>En stock : {{unCD.quantity}}</p>
-          <img [src]="unCD.cover" [alt]="unCD.title" />
+          <p>Sortie le : {{unCD.releaseDate | date:'dd/MM/yyyy'}}</p>
+          <p>Quantité : {{unCD.quantity}}</p>
         </div>
       </div>
-
     </section>
 </div>

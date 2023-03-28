@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { ReactiveFormsModule } from "@angular/forms";
 import {map, Observable} from "rxjs";
 import {CD} from "../../modele/cd";
@@ -17,15 +17,20 @@ export class NewCDComponent implements OnInit{
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+
+    const dateRegex = new RegExp('https?:\/\/.*\.(?:png|jpg|jpeg|gif|svg|webp|bmp|ico|tiff|jfif|pjpeg|pjp)$');
+
     this.formulaire = this.formBuilder.group({
-      title: [null],
-      artist: [null],
-      genre: [null],
-      price: [null],
-      releaseDate: [null],
-      cover: [null],
-      quantity: [null]
-    });
+      title: [null, [Validators.required, Validators.minLength(3)]],
+      artist: [null, [Validators.required, Validators.minLength(1)]],
+      genre: [null, [Validators.required, Validators.minLength(3)]],
+      price: [null, [Validators.required, Validators.min(0)]],
+      releaseDate: [null, [Validators.required, Validators.pattern(dateRegex)]],
+      cover: [null, [Validators.required]],
+      quantity: [null, [Validators.required, Validators.min(0)]]
+    }, {
+      updateOn: 'blur'
+    })
 
     this.currenCD$ = this.formulaire.valueChanges.pipe(map(formValue => (
       {
