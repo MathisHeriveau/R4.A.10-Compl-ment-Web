@@ -7,6 +7,8 @@ import { CDComponent } from './cd/cd.component';
 import { ListCDsComponent } from './list-cds/list-cds.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
+import { NewCDComponent } from './new-cd/new-cd.component';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -14,11 +16,14 @@ import { HomeComponent } from './home/home.component';
     CDComponent,
     ListCDsComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    NewCDComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

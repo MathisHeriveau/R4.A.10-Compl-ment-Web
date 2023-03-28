@@ -1,3 +1,4 @@
+<app-header *ngIf="idcd != undefined"></app-header>
 
 <div class="unCD-card" >
   <h3>{{unCD.title | uppercase}}</h3>
@@ -9,8 +10,13 @@
       <span [ngStyle]="{color: 'rgb('+ (255 - unCD.quantity) + ',' + unCD.quantity + ',0)'}">{{unCD.quantity}}</span>
       <!-- onAddCD() quand on appuie sur le bouton (meme en laissant appuyé) -->
       <button (click)="onAddCD()">+</button>
+      <!-- click sur le bouton -->
     </p>
   </div>
+  <p *ngIf="idcd == undefined">
+    <a class="button" [routerLink]="['/cd', unCD.id]">Voir le détail</a>
+  </p>
   <img [src]="unCD.cover" [alt]="unCD.title" />
-
 </div>
+
+

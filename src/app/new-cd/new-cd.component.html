@@ -1,0 +1,55 @@
+<app-header></app-header>
+
+<div class="monForm">
+    <section class="subForm saisieForm">
+      <h1>Nouveau CD</h1>
+      <form [formGroup]="formulaire">
+
+        <div class="form-group">
+          <label for="title">Titre</label>
+          <input type="text"  id="title" formControlName="title" required>
+        </div>
+        <div class="form-group">
+          <label for="cover">Pochette</label>
+          <input type="url"  id="cover" formControlName="cover" required>
+        </div>
+        <div class="form-group">
+          <label for="artist">Artiste</label>
+          <input type="text"  id="artist" formControlName="artist" required>
+        </div>
+        <div class="form-group">
+          <label for="genre">Genre</label>
+          <input type="text"  id="genre" formControlName="genre" required>
+        </div>
+        <div class="form-group">
+          <label for="price">Prix</label>
+          <input type="number"  id="price" formControlName="price" required>
+        </div>
+        <div class="form-group">
+          <label for="releaseDate">Date de sortie</label>
+          <input type="date"  id="releaseDate" formControlName="releaseDate" required>
+        </div>
+        <div class="form-group">
+          <label for="quantity">Quantité</label>
+          <input type="number"  id="quantity" formControlName="quantity" required>
+        </div>
+        <button type="submit" (click)="addCD()" >Ajouter</button>
+
+      </form>
+    </section>
+
+    <section class="vueCD">
+      <h1>Visualise ton CD</h1>
+      <div class="unCD-card" >
+        <div class="artiste" *ngIf="currenCD$ | async as unCD">
+          <h3>Titre : {{unCD.title | uppercase}}</h3>
+          <p>Sortie le : {{unCD.releaseDate | date:'dd/MM/yyyy'}}</p>
+          <p>Auteur : {{unCD.artist}}</p>
+          <p>Prix : {{unCD.price | currency:'EUR':true}}</p>
+          <p>En stock : {{unCD.quantity}}</p>
+          <img [src]="unCD.cover" [alt]="unCD.title" />
+        </div>
+      </div>
+
+    </section>
+</div>
